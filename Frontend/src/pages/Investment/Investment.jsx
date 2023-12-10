@@ -2,6 +2,7 @@ import React, { useEffect, useReducer } from 'react'
 import './investment.css'
 import axios from 'axios';
 import { Helmet } from 'react-helmet-async';
+import {Link} from 'react-router-dom'
 
 
 const reducer = (state,action)=>{
@@ -63,7 +64,7 @@ export default function Investment() {
       <section class="investment__section">
       <h2 class="heading__secondary color--black align">Simple pricing</h2>
       <p class="investment__info align">
-        Lorem ipsum dolor sit amet consectetur adipiscing eli <br/> mattis sit phasellus mollis sit aliquam sit nullam neque.
+      Investors can anticipate robust returns as we capitalize on the industry's <br/> growth with a focus on sustainability and quality
       </p>
       <div class="investment">
         {

@@ -126,7 +126,7 @@ export default function ProductScreen(){
     <section className="product__description--page wrapper mb-100">
       <div className="product__description--details flex__align">
         <div className="product__description--img">
-          <img src="../assets/img/Product image.png" alt=""/>
+          <img src={product.image} alt=""/>
         </div>
         <div className="product__description--text">
           <div className="text__header">

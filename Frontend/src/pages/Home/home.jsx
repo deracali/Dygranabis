@@ -403,9 +403,9 @@ const [open6,setOpen6] = useState(false)
           <div class="product__details flex__align">
             <div class="product__names">
             
-              <span class="names">{product.name}</span>
+              <span class="names">{product.name.slice(0, 10)}</span>
             
-              <span class="names">{product.desc}</span>
+              <span class="names">{product.desc.slice(0, 20)}</span>
             </div>
 
             <span class="product__price"

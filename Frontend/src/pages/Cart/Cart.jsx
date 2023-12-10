@@ -32,12 +32,13 @@ export default function Cart() {
       };
 
   return (
-    <div id="page">
+    <div id="page" style={{padding:"60px"}}>
        <Helmet>
                 <title>Cart</title>
             </Helmet>
         {cartItems.length === 0? (
-        <div>Cart is empty <a href="/product">Go Shoping</a></div>
+        <div style={{textAlign:"center"}} ><span className='heading__primary' style={{display:"block"}}>Cart is empty!</span> <span><a href="/product" className='primary__btn green'>Go Shoping</a></span></div>
+        
         ):(
           <>
            <section className="bg__green">
@@ -74,8 +75,8 @@ export default function Cart() {
             {cartItems.map((item)=>( 
             <div className="table__row--1 flex__align">
               <div className="item__img--name flex__align">
-                <img src="./assets/img/image-anne.jpg" alt=""/>
-                <span className="item--name">{item.name}</span>
+                <img src={item.image} alt=""/>
+                <span className="item--name">{item.name.slice(0, 15)}</span>
               </div>
                
 

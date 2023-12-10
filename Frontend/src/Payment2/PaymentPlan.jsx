@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import './payment.css'
-import { Store } from '../../../Store/Store'
+
 
 export default function PaymentPlan() {
   

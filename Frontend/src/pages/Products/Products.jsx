@@ -68,7 +68,7 @@ fetchData()
            
               <span class="names">{product.name}</span>
               
-              <span class="names">{product.desc}</span>
+              <span class="names">{product.desc.slice(0, 20)}</span>
             </div>
 
             <span class="product__price"

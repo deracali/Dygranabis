@@ -3,7 +3,13 @@ import './payment.css'
 import { Store } from '../../../Store/Store'
 
 export default function Payment() {
- 
+  const {state,dispatch:ctxDispatch} = useContext(Store)
+  const {
+      cart: {cartItems},
+      userInfo
+  } = state
+   
+  console.log(cartItems)
   return (
     <div className="credit-card-form">
     <h2>PAYMENT PORTAL</h2>
