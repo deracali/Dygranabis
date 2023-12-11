@@ -9,6 +9,7 @@ import Success from './success/Success';
 import Update from './Forms/Update';
 import DeleteSuccess from './deleteSucess/DeleteSuccess';
 import ProductUpdate from './Forms/productUpdate';
+import AddressUpdate from './Forms/AddressUpdate';
 
 function App() {
   return (
@@ -23,9 +24,10 @@ function App() {
      <Route path="/blog" exact element={<BlogForm/> } />     
      <Route path="/success" exact element={<Success/> } />     
      <Route path="/delete" exact element={<DeleteSuccess/> } />     
-     <Route path="/home" exact element={<Content/> } />    
+     <Route path="/" exact element={<Content/> } />    
      <Route path="/update/:id" element={<Update/> } />  
      <Route path="/productUpdate/:id" element={<ProductUpdate/> } />  
+     <Route path="/addressupdate/:id" element={<AddressUpdate/> } />  
     </Routes>
     </BrowserRouter>   
 

@@ -1,12 +1,48 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
+import { useReducer } from 'react';
 import { Helmet } from 'react-helmet-async'
 import {useNavigate} from 'react-router-dom'
+import axios from 'axios'
 
+const reducer = (state,action)=>{
+  switch(action.type){
+case 'FETCH_REQUEST':
+  return {...state,loading:true};
+  case 'FETCH_SUCCESS':
+    return {...state,address:action.payload,loading:false};
+    case 'FETCH_FAIL':
+      return {...state,loading:false,error:action.payload};
+      default:
+        return state;
+  }
+}
 export default function Contact() {
   const [name,setName] = useState('')
   const [email,setEmail] = useState('')
   const [text,setText] = useState('')
  
+
+  const [{loading,error,address},dispatch] = useReducer(reducer,{
+    address:[],
+     loading:true,
+     error:'',
+    })
+   
+  useEffect(()=>{
+    const fetchData = async()=>{
+      dispatch({type:'FETCH_REQUEST'});
+      try{
+        const result = await axios.get('https://dygranabis.onrender.com/api/address')
+      dispatch({type:'FETCH_SUCCESS',payload:result.data})
+      console.log(result)
+    }catch(err){
+      dispatch({type:'FETCH_FAIL',payload:err.message})
+    }
+    
+  } 
+  fetchData()
+},[])
 
    const navigate = useNavigate() 
  
@@ -51,6 +87,9 @@ headers:{
 
     <div class="contact__page flex__align wrapper">
       <div class="contact__info--left">
+      {
+  address.map(address=>(
+    <div>
         <div class="contact__address flex__align">
           <a href="" class="address location__link">
             <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -64,8 +103,8 @@ headers:{
               </svg>
               
           </a>
-          <span class="location--address">2715 Ash Dr. San Jose,</span>
-          <span class="location--address add--2">South Dakota 83475</span>
+          <span class="location--address">{address.address},</span>
+          <span class="location--address add--2">{address.location}</span>
         </div>
 
         <div class="contact__address flex__align">
@@ -91,11 +130,9 @@ headers:{
               </svg>
               
           </a>
-          <span class="location--address">Proxy@gmail.com</span>
-          <span class="location--address add--2">Help.proxy@gmail.com</span>
+          <span class="location--address">{address.email}</span>
+          <span class="location--address add--2">{address.customerEmail}</span>
         </div>
-
-        
         <div class="contact__address flex__align">
           <a href="#" class="address call__link">
             <svg width="52" height="51" viewBox="0 0 52 51" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -109,9 +146,15 @@ headers:{
               </svg>
               
           </a>
-          <span class="location--address">(219) 555-0114</span>
-          <span class="location--address add--2">(164) 333-0487</span>
+          <span class="location--address">{address.mobileNo1}</span>
+          <span class="location--address add--2">{address.mobileNo2}</span>
         </div>
+    </div>
+    
+  ))
+}
+
+        
       </div>
 
 

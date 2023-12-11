@@ -102,11 +102,11 @@ const handleDelete = async()=>{
           />
         </div>
        
-        <button onClick={handleSubmit}  type='submit' style={{padding:"10px",background:"white",borderRadius:"10px"}}  className="fluid ui">Submit</button>
+        <button  type='submit' style={{padding:"10px",background:"white",borderRadius:"10px"}}  className="fluid ui">Submit</button>
         <button onClick={handleDelete}   style={{marginLeft:"20px",padding:"10px",background:"white",borderRadius:"10px"}}   class="button_two">Delete</button>
       </div>
       <div style={{marginTop:"24px"}}>
-      <span className='status'>{status} Go back to</span> <Link to={"/home"} style={{fontSize:"20px"}}> Home</Link> 
+      <span className='status'>{status} Go back to</span> <Link to={"/"} style={{fontSize:"20px"}}> Home</Link> 
       </div>
     </form>
   </div>

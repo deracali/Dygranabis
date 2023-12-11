@@ -8,7 +8,12 @@ const PreLoader = () => {
       <div className="svg-wrapper">
         {/* copy svg image and past it here */}
        <img src={WeedImg}  style={{width:"90px"}}/>
-        <div className="loading-text">Loading...</div>
+       <p className="loaderr">
+  Loading dots
+  <span class="loading-dots">.</span>
+  <span class="loading-dots">.</span>
+  <span class="loading-dots">.</span>
+</p>
       </div>
     </div>
   );

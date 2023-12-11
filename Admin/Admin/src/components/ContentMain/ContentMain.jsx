@@ -8,6 +8,7 @@ import Users from "../Users/Users";
 import Products from "../Products/Products";
 import Blog from "../Blog/Blog";
 import ContactUs from "../ContactUs/ContactUs";
+import Address from "../Address/Address";
 
 const ContentMain = () => {
   return (
@@ -23,7 +24,7 @@ const ContentMain = () => {
             <div className="grid-two-item">
               <div className="subgrid-two">
             <Report />
-                {/* <Savings /> */}
+            <Address />
               </div>
             </div>
 

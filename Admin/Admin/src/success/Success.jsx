@@ -10,7 +10,7 @@ export default function Success() {
       <div className="content">
         <p className="type">Success</p>
         <p className="message-type">Go back to home</p>
-        <a className='type' href='/home'>Home</a>
+        <a className='type' href='/'>Home</a>
       </div>
     </div>
    
