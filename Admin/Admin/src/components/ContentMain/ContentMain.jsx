@@ -9,14 +9,15 @@ import Products from "../Products/Products";
 import Blog from "../Blog/Blog";
 import ContactUs from "../ContactUs/ContactUs";
 import Address from "../Address/Address";
+import Payment from "../payment/payment";
 
 const ContentMain = () => {
   return (
     <div className="main-content-holder">
         <div className="content-grid-one">
-            {/* <Cards /> */}
             <Users />
             <Products />
+            <Payment />
         </div>
         <div className="content-grid-two">
             <Budget />

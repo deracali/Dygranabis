@@ -222,6 +222,9 @@ const handleSubmit = async(e)=>{
         </div>
 
         <button type='submit' style={{padding:"10px",background:"white",borderRadius:"10px"}}  className="fluid ui">Submit</button>
+        <div style={{marginTop:"24px"}}>
+      <span className='status'>{status} Go back to</span> <Link to={"/"} style={{fontSize:"20px"}}> Home</Link> 
+      </div>
       </div>
     </form>
   </div>

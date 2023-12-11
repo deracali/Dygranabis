@@ -86,9 +86,6 @@ export default function Login() {
              Remember
             </label>
           </fieldset>
-
-          <Link to="#" class="forgotten ">Forget Password</Link>
-        
             
         </fieldset>
         

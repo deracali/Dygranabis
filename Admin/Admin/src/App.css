@@ -26,7 +26,7 @@
 }
 
 body {
-  font-family: var(--font-family-bai);
+  font-family: sans-serif;
 }
 p{
   font-family: var(--font-family-bai);

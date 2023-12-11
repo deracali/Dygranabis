@@ -10,13 +10,15 @@ import Update from './Forms/Update';
 import DeleteSuccess from './deleteSucess/DeleteSuccess';
 import ProductUpdate from './Forms/productUpdate';
 import AddressUpdate from './Forms/AddressUpdate';
+import PaymentUpdate from './Forms/PaymentUpdate';
+import DeleteBlog from './Forms/deleteBlog';
 
 function App() {
   return (
     <>
       <div className='app'>
         <Sidebar />
-        {/* <Content /> */}
+
     <BrowserRouter>
     <Routes>
      <Route path="/products" exact element={<Form/> } />     
@@ -28,6 +30,8 @@ function App() {
      <Route path="/update/:id" element={<Update/> } />  
      <Route path="/productUpdate/:id" element={<ProductUpdate/> } />  
      <Route path="/addressupdate/:id" element={<AddressUpdate/> } />  
+     <Route path="/paymentupdate/:id" element={<PaymentUpdate/> } />  
+     <Route path="/blogdelete/:id" element={<DeleteBlog/> } />  
     </Routes>
     </BrowserRouter>   
 

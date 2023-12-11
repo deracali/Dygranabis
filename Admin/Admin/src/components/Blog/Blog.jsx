@@ -48,6 +48,7 @@ const Blog = () => {
         </div>
         {
           blog.map((blog)=>(
+            <a key={blog._id} href={`/blogdelete/${blog._id}`}>
         <div className="grid-c8-content" style={{borderBottom:"1px solid"}} key={blog._id}>
           <div className="icon">
              <img src={ blog.image } />
@@ -55,6 +56,7 @@ const Blog = () => {
             <p className="text text-silver-v1">{blog.title}</p>
             <p className="text text-silver-v1">{blog.subtitle.slice(0,65)}....</p>
         </div>
+            </a>
           ))
         }
     </div>
